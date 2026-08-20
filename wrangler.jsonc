@@ -1,0 +1,12 @@
+{
+  "name": "matrix-family-bot",
+  "main": "worker.js",
+  "compatibility_date": "2026-08-20",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "matrix-family-db",
+      "database_id": "PASTE_YOUR_D1_DATABASE_ID"
+    }
+  ]
+}
