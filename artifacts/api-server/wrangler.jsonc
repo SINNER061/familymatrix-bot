@@ -1,0 +1,21 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "matrix-family-telegram-bot",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-08-20",
+  "d1_databases": [
+    { "binding": "DB", "database_name": "matrix-family", "database_id": "REPLACE_WITH_D1_DATABASE_ID", "migrations_dir": "migrations" }
+  ],
+  "r2_buckets": [
+    { "binding": "MEDIA", "bucket_name": "matrix-family-media" }
+  ],
+  "queues": {
+    "producers": [
+      { "binding": "BROADCAST_QUEUE", "queue": "matrix-family-broadcast" }
+    ],
+    "consumers": [
+      { "queue": "matrix-family-broadcast", "max_batch_size": 10, "max_batch_timeout": 5 }
+    ]
+  },
+  "vars": { "ADMIN_IDS": "" }
+}
